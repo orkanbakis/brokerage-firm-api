@@ -1,0 +1,64 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: brokerage-firm-postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: brokerage-firm
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+  redis:
+    image: redis:latest
+    container_name: brokerage-firm-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+    volumes:
+      - redis_data:/data
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "rabbitmq"
+    container_name: brokerage-firm-rabbitmq
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+#  app:
+#    image: openjdk:23-jdk
+#    container_name: brokerage-firm-api
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/brokerage-firm
+#      SPRING_DATASOURCE_USERNAME: user
+#      SPRING_DATASOURCE_PASSWORD: password
+#      SPRING_REDIS_HOST: redis
+#      RABBIT_HOST: amqp://rabbitmq:5672
+#      RABBITMQ_USERNAME: guest
+#      RABBITMQ_PASSWORD: guest
+#    depends_on:
+#      - rabbitmq
+#      - postgres
+#      - redis
+#    ports:
+#      - "8080:8080" # Expose your application's port
+#    networks:
+#      - backend
+volumes:
+  postgres_data:
+  redis_data:
+networks:
+  backend:
+    driver: bridge

@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+  security:
+    user:
+      name: admin
+      password: s3cr3t
+      roles: ADMIN
+  datasource:
+    url: jdbc:postgresql://localhost:5432/brokerage-firm
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    enabled: true
+    change-log: classpath:db/db.changelog-master.json
+  data:
+    redis:
+      port: 6379
+      host: localhost
+  application:
+    name: brokerage-firm-api
+  rabbitmq:
+    order-exchange: BROKERAGE_ORDER_EXCHANGE
+    order-queue: brokerage-firm-order-queue
+    order-routing-key: brokerage-firm-order-routing-key
+    order-dead-letter-exchange: BROKERAGE_ORDER_DLX_EXCHANGE
+    order-dead-letter-queue: brokerage-firm-order-dlq-queue
+    order-dead-letter-routing-key: brokerage-firm-order-dlq-routing-key
+    max-attempts: 3
+    connection-name: brokerage-firm-service
+    prefetch-count: 1
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+logging:
+  level:
+    com.brokeragefirm.BrokerageFirmApplication: DEBUG
+    root: INFO

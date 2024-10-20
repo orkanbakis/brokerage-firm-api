@@ -1,0 +1,193 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "1729206963321-1",
+        "author": "orkanbakis",
+        "objectQuotingStrategy": "QUOTE_ONLY_RESERVED_WORDS",
+        "changes": [
+          {
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false,
+                      "primaryKey": true,
+                      "primaryKeyName": "pk_assets"
+                    },
+                    "name": "id",
+                    "type": "UUID"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "created_at",
+                    "type": "DATETIME"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "updated_at",
+                    "type": "DATETIME"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "deleted_at",
+                    "type": "DATETIME"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "customer_id",
+                    "type": "UUID"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "asset_name",
+                    "type": "VARCHAR(255)"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "size",
+                    "type": "DECIMAL"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "usable_size",
+                    "type": "DECIMAL"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "asset_type",
+                    "type": "VARCHAR(255)"
+                  }
+                }
+              ],
+              "tableName": "assets"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "1729206963321-2",
+        "author": "orkanbakis",
+        "objectQuotingStrategy": "QUOTE_ONLY_RESERVED_WORDS",
+        "changes": [
+          {
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false,
+                      "primaryKey": true,
+                      "primaryKeyName": "pk_orders"
+                    },
+                    "name": "id",
+                    "type": "UUID"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "created_at",
+                    "type": "DATETIME"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "updated_at",
+                    "type": "DATETIME"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "deleted_at",
+                    "type": "DATETIME"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "customer_id",
+                    "type": "UUID"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "asset_name",
+                    "type": "VARCHAR(255)"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "order_side",
+                    "type": "VARCHAR(255)"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "status",
+                    "type": "VARCHAR(255)"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "price",
+                    "type": "DECIMAL(19, 2)"
+                  }
+                },
+                {
+                  "column": {
+                    "constraints": {
+                      "nullable": false
+                    },
+                    "name": "size",
+                    "type": "DOUBLE"
+                  }
+                }
+              ],
+              "tableName": "orders"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

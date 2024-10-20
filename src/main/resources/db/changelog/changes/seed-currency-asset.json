@@ -1,0 +1,67 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "1",
+        "author": "orkanbakis",
+        "changes": [
+          {
+            "insert": {
+              "tableName": "assets",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "value": "d1423e6d-596f-4520-aa4c-957c7bd29a71"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "customer_id",
+                    "value": "d7c7a431-b46b-4f5e-9f87-0aa6e9006752"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "asset_name",
+                    "value": "TRY"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "asset_type",
+                    "value": "CURRENCY"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "size",
+                    "valueNumeric": 100
+                  }
+                },
+                {
+                  "column": {
+                    "name": "usable_size",
+                    "valueNumeric": 100
+                  }
+                },
+                {
+                  "column": {
+                    "name": "created_at",
+                    "valueDate": "now()"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "updated_at",
+                    "valueDate": "now()"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
