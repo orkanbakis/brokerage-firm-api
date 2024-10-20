@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("/api/v1/transactions")
+@RequestMapping("v1/api/transactions")
 @RequiredArgsConstructor
 @Tag(name = "Transaction", description = "Transaction API")
 public class TransactionController {

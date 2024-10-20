@@ -174,7 +174,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/api/v1/transactions/pre-transaction",
+							"raw": "localhost:8080/v1/api/transactions/pre-transaction",
 							"host": [
 								"localhost"
 							],
@@ -210,7 +210,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/v1/transactions/91981ea4-7312-4b66-9def-501802b5ae61",
+							"raw": "localhost:8080/v1/api/transactions/91981ea4-7312-4b66-9def-501802b5ae61",
 							"host": [
 								"localhost"
 							],

@@ -4,7 +4,7 @@ This project is a brokerage firm API built with Java, Spring Boot, and Gradle. I
 
 ## Prerequisites
 
-- Java 21
+- Java 23
 - Docker
 - Docker Compose
 - Gradle
@@ -27,7 +27,6 @@ This project is a brokerage firm API built with Java, Spring Boot, and Gradle. I
     ```
 
    This command will build the Docker images and start the following services:
-    - `app`: The main Spring Boot application.
     - `postgres`: PostgreSQL database.
     - `redis`: Redis server.
     - `rabbitmq`: RabbitMQ server.

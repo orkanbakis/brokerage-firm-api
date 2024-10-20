@@ -47,7 +47,7 @@ class OrderProcessingServiceTest {
 
     orderProcessingService.processOrder(order);
 
-    verify(asset).reduceAssets(order.getPrice().amount().multiply(BigDecimal.valueOf(order.getSize())));
+    verify(asset).reduceUsableSize(order.getPrice().amount().multiply(BigDecimal.valueOf(order.getSize())));
     verify(assetPort).updateAsset(asset);
     verify(orderPort).addOrder(order);
   }
