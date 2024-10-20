@@ -4,7 +4,7 @@ This project is a brokerage firm API built with Java, Spring Boot, and Gradle. I
 
 ## Prerequisites
 
-- Java 21
+- Java 23
 - Docker
 - Docker Compose
 - Gradle
